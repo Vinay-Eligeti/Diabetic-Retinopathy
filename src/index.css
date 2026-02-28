@@ -1,0 +1,230 @@
+/* ============================================
+   DR DETECT AI — Design System (React)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-50: #e6faf8;
+  --primary-100: #b3f0e8;
+  --primary-200: #80e6d8;
+  --primary-300: #4ddcc8;
+  --primary-400: #26d4bb;
+  --primary-500: #00cbae;
+  --primary-600: #00a28b;
+  --primary-700: #007a68;
+  --primary-800: #005246;
+  --primary-900: #002923;
+
+  --accent-500: #ff4d3a;
+  --accent-600: #e6382a;
+
+  --neutral-50: #f8fafb;
+  --neutral-100: #f1f4f6;
+  --neutral-200: #e4e8ec;
+  --neutral-300: #cdd3d9;
+  --neutral-400: #9ba5b0;
+  --neutral-500: #6b7785;
+  --neutral-600: #4a5568;
+  --neutral-700: #2d3748;
+  --neutral-800: #1a202c;
+  --neutral-900: #0d1117;
+
+  --severity-0: #22c55e;
+  --severity-1: #84cc16;
+  --severity-2: #eab308;
+  --severity-3: #f97316;
+  --severity-4: #ef4444;
+  --severity-0-bg: rgba(34, 197, 94, 0.12);
+  --severity-1-bg: rgba(132, 204, 22, 0.12);
+  --severity-2-bg: rgba(234, 179, 8, 0.12);
+  --severity-3-bg: rgba(249, 115, 22, 0.12);
+  --severity-4-bg: rgba(239, 68, 68, 0.12);
+
+  --sidebar-width: 280px;
+  --header-height: 70px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 30px rgba(0, 203, 174, 0.15);
+
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-blur: blur(20px);
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #f0fdf9 0%, #ecfeff 30%, #f0f9ff 60%, #faf5ff 100%);
+  color: var(--neutral-700);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: -1;
+  animation: blobFloat 20s ease-in-out infinite;
+}
+
+body::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--primary-200) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+}
+
+body::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #c4b5fd 0%, transparent 70%);
+  bottom: -50px;
+  left: -50px;
+  animation-delay: -10s;
+}
+
+@keyframes blobFloat {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(30px, -40px) scale(1.05);
+  }
+
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+
+  75% {
+    transform: translate(15px, 35px) scale(1.02);
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes typingBounce {
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cursorBlink {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-400);
+}
+
+/* Validation Styles */
+.input-error {
+  color: var(--severity-4);
+  font-size: 0.75rem;
+  margin-top: 4px;
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+.form-input.error,
+.form-select.error {
+  border-color: var(--severity-4);
+  background-color: var(--severity-4-bg);
+}
+
+.form-input.error:focus,
+.form-select.error:focus {
+  box-shadow: 0 0 0 3px var(--severity-4-bg);
+}
