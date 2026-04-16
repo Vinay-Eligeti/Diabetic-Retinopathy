@@ -3,7 +3,7 @@ import { useApp } from '../context/AppContext';
 
 // Dynamic prompts will be generated based on context
 
-const GROQ_API_KEY = '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';
+const GROQ_API_KEY = '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';
 const GROQ_MODEL = 'llama-3.3-70b-versatile';
 const CHAT_STORAGE_KEY = 'dr_detect_chat_messages';
 
